@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(120deg, rgb(19, 89, 112), rgb(12, 95, 122));
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: grey;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 22px;
+}
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-ul {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin-right: 25%;
+}
+.nav-item {
+  list-style: none;
+}
+.nav-ul a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 18px;
+}
+li {
+  list-style: none;
+}
+.hamburger {
+  position: absolute;
+  left: 90%;
+  right: -5%;
+  margin-top: -5px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-ul {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-ul {
+    position: absolute;
+    right: 0%;
+    height: 92vh;
+    top: 8vh;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-ul {
+    opacity: 0;
+  }
+  .hamburger {
+    display: block;
+    margin-right: 20%;
+  }
+  form {
+    opacity: 0;
+  }
+  header {
+    opacity: 0;
+  }
+  .todo {
+    opacity: 0;
+  }
+}
+
+.nav-active {
+  transform: translateX(90%);
+  opacity: 1;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.active span:nth-child(1) {
+  transform: translate(0, 8.5px) rotate(-45deg);
+}
+.active span:nth-child(2) {
+  opacity: 0;
+}
+.active span:nth-child(3) {
+  transform: translate(0, -7.5px) rotate(45deg);
+}
+
+header {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+header,
+form {
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-value {
+  width: 35%;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #d88771;
+  color: white;
+}
+
+.for-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+}
+.todo li {
+  flex: 1;
+}
+.todo-item {
+  width: 350px;
+  height: 35px;
+  border: 3px solid white;
+  /* margin: 8px; */
+  font-size: 25px;
+  color: rgb(95, 23, 11);
+  transition: all 1s ease;
+}
+
+.check-button,
+.edit-button,
+.trash-button {
+  background: rgb(80, 14, 3);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.edit-button {
+  background: #ff6f47;
+}
+.check-button {
+  background: green;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.select {
+  margin: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.filter-todo {
+  height: 53px;
+  width: 145px;
+  font-size: 20px;
+  align-items: center;
+}
