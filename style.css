@@ -219,3 +219,7 @@ form button:hover {
   font-size: 20px;
   align-items: center;
 }
+
+.kaxa-magaria {
+  opacity: 0.5;
+}
